@@ -1,0 +1,153 @@
+<!--Chatroom page of Womb web application.-->
+<!--Allows users and medical professionals to have 1-on-1 chats.-->
+<!--Made by Womb Team on 6 August 2022.-->
+<!--Extra credit to: https://github.com/ScaleDrone/javascript-chat-room-tutorial
+and https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>1-on-1 Chatroom</title>
+  <script type="text/javascript" src="https://cdn.scaledrone.com/scaledrone.min.js"></script>
+  <script>
+    function toggleCouponMenu() {
+        var menu = document.getElementById("price-options");
+        if (menu.style.display === "none") {
+            menu.style.display = "block";
+        } else {
+            menu.style.display = "none";
+        }
+    }
+    function sendCoupon(coupCont) {
+        document.getElementById("messageInput").value = coupCont;
+        toggleCouponMenu();
+    }
+  </script>
+  <style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 13px;
+      display: flex;
+      flex-direction: column;
+      max-height: 100vh;
+      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+	    background: #DC143C;
+    }
+    h3{
+      color: #FFFFFF;
+      margin: 8px;
+    }
+    #price-options{
+        background-color: #e4e4e4;
+        padding: 5px;
+        position:absolute;
+        bottom: 45px;
+        right: 10px;
+        display: none;
+    }
+    .center {
+        width: 50%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+     }
+
+    .members-count,
+    .members-list,
+    .messages {
+      border: 1px solid #e4e4e4;
+      padding: 5px;
+      margin-bottom: 15px;
+	    background: #FFB6C1;
+    }
+    .messages {
+      flex-shrink: 1;
+      margin-bottom: 33px;
+      overflow: auto;
+    }
+   .message {
+      inline-size:auto;
+      overflow-wrap: break-word;
+      margin-top: 5px;
+      margin-bottom: 25px;
+      border-radius: 15px;
+      background: #DC143C;
+      color: #fff;
+      padding: 20px;
+      text-align: left;
+      font-weight: 900;
+      font-family: arial;
+      position: relative;
+	  
+    }
+	  .message:before{
+        content: "";
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        border-left: 10px solid #DC143C;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #DC143C;
+        border-bottom: 10px solid transparent;
+        left: 19px;
+        bottom: -19px;
+    }
+    .message .member {
+      display: block;
+    }
+    .member {
+      padding-right: 10px;
+      position: relative;
+	  
+    }
+    .message-form {
+      display: flex;
+      flex-shrink: 0;
+    }
+    .message-form__input {
+      flex-grow: 1;
+      border: 1px solid #dfdfdf;
+      margin: 0px;
+      padding: 7px 15px;
+      width: 242px;
+      font-size: 16px;
+      position:fixed;
+      bottom:5px;
+      left:5px;
+    }
+    .message-form__button {
+      margin: 0px;
+      padding: 7px 15px;
+      position:fixed;
+      bottom:5px;
+      border-color: white;
+    }
+  </style>
+</head>
+<body>
+    <header>
+      <img src="../bin/images/logo.png" width="100" height="80" class = "center">
+      <h3>1-on-1 Chat with Professional</h3>
+    </header>
+    <div class="members-count">-</div>
+    <div class="members-list">-</div>
+    <div class="messages"></div>
+    <footer>
+      <form class="message-form" onsubmit="return false;">
+        <input class="message-form__input" id="messageInput" placeholder="Type a message.." type="text"/>
+          <div id="price-options">
+              <p id ="coupon1" onclick="sendCoupon('General session: R700.');">General session</p>
+              <hr />
+              <p id ="coupon2" onclick="sendCoupon('Coupon HEALTH28: 20% off check-up!');">Coupon</p>
+              <hr />
+              <p id ="coupon3" onclick="sendCoupon('Free consultation! Code ACCESS53. Valid for one month.');">Free session</p>
+          </div>
+        <input class="message-form__button" id="addButton" value="+" style="right:75px; border-radius: 25px;" type="button" onclick="toggleCouponMenu();"/>
+        <input class="message-form__button" id="sendButton" value="Send" type="submit" style="right:5px;"/>
+      </form>
+    </footer>
+    <script src="./chatroom.js"></script>
+  </body>
+</html>

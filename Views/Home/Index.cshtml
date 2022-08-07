@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Health Information</title>
+        <style>
+            body{
+                text-align: center;
+            }
+            h1{
+                color: maroon;
+                text-align: center;
+                font-size: 100px;
+                margin: 5px;
+            }
+            table{
+                width:100%;
+                height: 80%;
+            }
+            td{
+                color: black;
+                border: 1px solid white;
+                padding: 3px;
+                width: 20%;
+                height: 40%;
+                font-size: 60px;
+                text-align: center;
+                background-color: darksalmon;
+            }
+            td:hover{
+                background-color:maroon;
+                color: white;
+            }
+            footer{
+                text-align:center;
+                font-size:6px;
+            }
+        </style>
+    </head>
+    <body>
+     @*   <img src="../images/logo.png" width="400px" height="160px" />*@
+     <div class=container>
+        <div id="topics">
+            <table>
+                <tr>
+                    <td onclick="window.open('../bin/images/infographic_puberty.jpg','popUpWindow')">Puberty</td>
+                    <td onclick="window.open('../bin/images/infographic_birthcontrol.jpg','popUpWindow')">Birth Control</td>
+                    <td onclick="window.open('../bin/images/infographic_pregnancy.jpg','popUpWindow')">Pregnancy</td>
+                    <td onclick="window.open('../bin/images/infographic_sexualassault.jpg','popUpWindow')">Sexual Assault</td>
+                </tr>
+                <tr>
+                    <td onclick="window.open('../bin/images/infographic_stds.jpg','popUpWindow')">STDs</td>
+                    <td onclick="window.open('../bin/images/infographic_sexualhealth.jpg','popUpWindow')">Sexual Health</td>
+                    <td onclick="window.open('../bin/images/infographic_papsmears.jpg','popUpWindow')">Pap Smears</td>
+                    <td onclick="window.open('../bin/images/infographic_menopause.jpg','popUpWindow')">Menopause</td>
+                </tr>
+            </table>
+        </div>
+        </div>
+        <footer>
+            Thank you to the following resources:
+            <br />https://www.gorgeousgirl.com/stages-of-puberty.html
+            <br />https://www.stayathomemum.com.au/
+            <br />https://healthcare.utah.edu/healthfeed/postings/2015/05/050515_infographic-pregnancy-prep.php
+            <br />https://www.cdc.gov/
+            <br />https://visual.ly/community/Infographics/health/stds-college-campus?crlt_pid=camp.1jdqvbY5iuWY
+            <br />https://www.mediclinicinfohub.co.za/your-pap-smear-the-facts-infographic/
+            <br />http://www.testocreams.com/blog/perimenopause-menopause-infographic/
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,288 @@
+<!--Professionals page of Womb web application.-->
+<!--Displays currently active medical professionals and some info about them.-->
+<!--The user can choose to chat 1-on-1 with any featured.-->
+<!--Made by uter/US on 6 August 2022.-->
+<!--Extra credit to: https://www.quackit.com/javascript/popup_windows.cfm-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Professionals Available</title>
+        <meta name="viewport" content="width=device-width">
+        <style>
+            body{
+                background-color: #FF9999;
+                text-align: center;
+            }
+            p{
+                padding: 5px;
+                margin: 5px;
+            }
+            h1{
+                color: #CC0033;
+            }
+            h3{
+                color: black;
+            }
+            h5{
+                font-size: 14px;
+                font-family: cursive;
+                margin-top: 0px;
+            }
+            h1, h3, h5{
+                padding: 5px;
+                margin: 5px;
+            }
+            header{
+                background: white;
+            }
+            table{
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            td{
+                padding: 10px;
+            }
+            #extra-search{
+                display: none;
+            }
+            .professionals-tiles{
+                color: white;
+            }
+            .professional-image{
+                width: 150px;
+                height: 200px;
+            }
+            .professional-options{
+                color: grey;
+                size: 3px;
+            }
+            .professional-options-img{
+                width: 20px;
+                height: 20px;
+            }
+            input{
+                padding: 10px;
+                margin: 10px;
+            }
+            .searchInput{
+                padding: 5px;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+            <header>
+                <marquee>
+                    <img src="../bin/images/logo.png" width="200" height="100">
+                    <h5>Wellness of Mind and Body</h5>
+                </marquee>
+            </header>
+        <div id="search">
+            <input class="searchInput" id="search-field" type="text" placeholder="Search by profession" />
+            <br />
+            <select name="Factor" id="factor">
+                <option value="location">Location</option>
+                <option value="price">Price</option>
+                <option value="language">Language</option>
+                <option value="gender">Gender</option>
+                <option value="race">Race</option>
+                <option value="religion">Religion</option>
+            </select>
+            <select name="Value" id="factor-value">
+                <option value="blank"></option>
+                <option value="500">R0-500</option>
+                <option value="1000">R500-R1000</option>
+                <option value="2000">R1000-R2000</option>
+                <option value="plus">R2000+</option>
+            </select>
+            <input class="searchInput" type="button" value="+" onclick="document.getElementById('extra-search').style.display='block';" />
+            <div id="extra-search">
+                <select name="Factor" id="factor">
+                    <option value="location">Location</option>
+                    <option value="price">Price</option>
+                    <option value="language">Language</option>
+                    <option value="gender">Gender</option>
+                    <option value="race">Race</option>
+                    <option value="religion">Religion</option>
+                </select>
+                <select name="Value" id="factor-value">
+                    <option value="blank"></option>
+                    <option value="ct">Cape Town</option>
+                    <option value="joburg">Johannesburg</option>
+                    <option value="durban">Durban</option>
+                    <option value="pe">Port Elizabeth</option>
+                </select>
+                <input class="searchInput" type="button" value="+" />
+            </div>
+            <br /><input class="searchInput" type="button" value="Search" onclick="document.getElementById('search-field').value = ''" />
+        </div>
+        <div class="professionals">
+            <table id="professionals-table">
+                <tr>
+                    <td>
+                        <img class="professional-image" src="../images/doctor2.jpg" alt="Professional's Picture" />
+                        <h3>Name Surname</h3>
+                        <h3>Professional Title</h3>
+                        <h3>R0-R500</h3>
+                        <p>Short introduction.</p>
+                        <p class="professional-options">
+                            <img src="../images/medbay.png"  class="professional-options-img" title="Sick bed available"/>
+                            <img src="../images/disability.png"  class="professional-options-img" title="Disability friendly"/>
+                            <img src="../images/budget.png" class="professional-options-img" title="Budget friendly" />
+                        </p>
+                        <!--Create a pop-up window with a chatroom-->
+                        <input type="button" value="Chat with me!" onclick="window.open(
+                            '../bin/chatroom.html','popUpWindow','height=600,width=400,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'
+                        );" />
+                    </td>
+                    <td>
+                        <img class="professional-image" src="../images/doctor1.jpg" alt="Professional's Picture" />
+                        <h3>Name Surname</h3>
+                        <h3>Professional Title</h3>
+                        <h3>R0-R500</h3>
+                        <p>Short introduction.</p>
+                        <p class="professional-options">
+                            <img src="../images/medbay.png"  class="professional-options-img" title="Sick bed available"/>
+                            <img src="../images/disability.png"  class="professional-options-img" title="Disability friendly"/>
+                            <img src="../images/budget.png" class="professional-options-img" title="Budget friendly" />
+                        </p>
+                        <input type="button" value="Chat with me!" onclick="window.open(
+                            '../bin/chatroom.html','popUpWindow','height=600,width=400,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'
+                        );" />
+                    </td>
+                    <td>
+                        <img class="professional-image" src="../images/doctor2.jpg" alt="Professional's Picture" />
+                        <h3>Name Surname</h3>
+                        <h3>Professional Title</h3>
+                        <h3>R0-R500</h3>
+                        <p>Short introduction.</p>
+                        <p class="professional-options">
+                            <img src="../images/medbay.png"  class="professional-options-img" title="Sick bed available"/>
+                            <img src="../images/disability.png"  class="professional-options-img" title="Disability friendly"/>
+                            <img src="../images/budget.png" class="professional-options-img" title="Budget friendly" />
+                        </p>
+                        <input type="button" value="Chat with me!" onclick="window.open(
+                            '../bin/chatroom.html','popUpWindow','height=600,width=400,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'
+                        );" />
+                    </td>
+                    <td>
+                        <img class="professional-image" src="../images/doctor1.jpg" alt="Professional's Picture" />
+                        <h3>Name Surname</h3>
+                        <h3>Professional Title</h3>
+                        <h3>R0-R500</h3>
+                        <p>Short introduction.</p>
+                        <p class="professional-options">
+                            <img src="../images/medbay.png"  class="professional-options-img" title="Sick bed available"/>
+                            <img src="../images/disability.png"  class="professional-options-img" title="Disability friendly"/>
+                            <img src="../images/budget.png" class="professional-options-img" title="Budget friendly" />
+                        </p>
+                        <input type="button" value="Chat with me!" onclick="window.open(
+                            '../bin/chatroom.html','popUpWindow','height=600,width=400,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'
+                        );" />
+                    </td>
+                    <td>
+                        <img class="professional-image" src="../images/doctor2.jpg" alt="Professional's Picture" />
+                        <h3>Name Surname</h3>
+                        <h3>Professional Title</h3>
+                        <h3>R0-R500</h3>
+                        <p>Short introduction.</p>
+                        <p class="professional-options">
+                            <img src="../images/medbay.png"  class="professional-options-img" title="Sick bed available"/>
+                            <img src="../images/disability.png"  class="professional-options-img" title="Disability friendly"/>
+                            <img src="../images/budget.png" class="professional-options-img" title="Budget friendly" />
+                        </p>
+                        <input type="button" value="Chat with me!" onclick="window.open(
+                            '../bin/chatroom.html','popUpWindow','height=600,width=400,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'
+                        );" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="professional-image" src="../images/doctor2.jpg" alt="Professional's Picture" />
+                        <h3>Name Surname</h3>
+                        <h3>Professional Title</h3>
+                        <h3>R0-R500</h3>
+                        <p>Short introduction.</p>
+                        <p class="professional-options">
+                            <img src="../images/medbay.png"  class="professional-options-img" title="Sick bed available"/>
+                            <img src="../images/disability.png"  class="professional-options-img" title="Disability friendly"/>
+                            <img src="../images/budget.png" class="professional-options-img" title="Budget friendly" />
+                        </p>
+                        <input type="button" value="Chat with me!" onclick="window.open(
+                            '../bin/chatroom.html','popUpWindow','height=600,width=400,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'
+                        );" />
+                    </td>
+                    <td>
+                        <img class="professional-image" src="../images/doctor1.jpg" alt="Professional's Picture" />
+                        <h3>Name Surname</h3>
+                        <h3>Professional Title</h3>
+                        <h3>R0-R500</h3>
+                        <p>Short introduction.</p>
+                        <p class="professional-options">
+                            <img src="../images/medbay.png"  class="professional-options-img" title="Sick bed available"/>
+                            <img src="../images/disability.png"  class="professional-options-img" title="Disability friendly"/>
+                            <img src="../images/budget.png" class="professional-options-img" title="Budget friendly" />
+                        </p>
+                        <input type="button" value="Chat with me!" onclick="window.open(
+                            '../bin/chatroom.html','popUpWindow','height=600,width=400,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'
+                        );" />
+                    </td>
+                    <td>
+                        <img class="professional-image" src="../images/doctor2.jpg" alt="Professional's Picture" />
+                        <h3>Name Surname</h3>
+                        <h3>Professional Title</h3>
+                        <h3>R0-R500</h3>
+                        <p>Short introduction.</p>
+                        <p class="professional-options">
+                            <img src="../images/medbay.png"  class="professional-options-img" title="Sick bed available"/>
+                            <img src="../images/disability.png"  class="professional-options-img" title="Disability friendly"/>
+                            <img src="../images/budget.png" class="professional-options-img" title="Budget friendly" />
+                        </p>
+                        <input type="button" value="Chat with me!" onclick="window.open(
+                            '../bin/chatroom.html','popUpWindow','height=600,width=400,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'
+                        );" />
+                    </td>
+                    <td>
+                        <img class="professional-image" src="../images/doctor1.jpg" alt="Professional's Picture" />
+                        <h3>Name Surname</h3>
+                        <h3>Professional Title</h3>
+                        <h3>R0-R500</h3>
+                        <p>Short introduction.</p>
+                        <p class="professional-options">
+                            <img src="../images/medbay.png"  class="professional-options-img" title="Sick bed available"/>
+                            <img src="../images/disability.png"  class="professional-options-img" title="Disability friendly"/>
+                            <img src="../images/budget.png" class="professional-options-img" title="Budget friendly" />
+                        </p>
+                        <input type="button" value="Chat with me!" onclick="window.open(
+                            '../bin/chatroom.html','popUpWindow','height=600,width=400,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'
+                        );" />
+                    </td>
+                    <td>
+                        <img class="professional-image" src="../images/doctor2.jpg" alt="Professional's Picture" />
+                        <h3>Name Surname</h3>
+                        <h3>Professional Title</h3>
+                        <h3>R0-R500</h3>
+                        <p>Short introduction.</p>
+                        <p class="professional-options">
+                            <img src="../images/medbay.png"  class="professional-options-img" title="Sick bed available"/>
+                            <img src="../images/disability.png"  class="professional-options-img" title="Disability friendly"/>
+                            <img src="../images/budget.png" class="professional-options-img" title="Budget friendly" />
+                        </p>
+                        <input type="button" value="Chat with me!" onclick="window.open(
+                            '../bin/chatroom.html','popUpWindow','height=600,width=400,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes'
+                        );" />
+                    </td>
+                    </tr>
+            </table>
+        </div>
+        <footer>
+            <p>
+            Photo by Jeff Denlea: https://www.pexels.com/photo/woman-in-white-medical-robe-3714743/
+            <br />Photo by Tima Miroshnichenko: https://www.pexels.com/photo/photo-of-woman-with-stethoscope-hanging-on-the-back-of-her-neck-5452201/
+            <br /><a href='https://www.freepik.com/vectors/icon'>Icon vector created by rawpixel.com - www.freepik.com</a>
+            </p>
+        </footer>
+    </body>
+</html>
